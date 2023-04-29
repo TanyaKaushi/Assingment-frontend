@@ -36,33 +36,33 @@ const ProductList = ({ posts }) => {
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-  
-  const searchInput = document.getElementById('searchInput');
-  const tableRows = document.querySelectorAll('#myTable tbody td');
-  
-  searchInput.addEventListener('input', () => {
-    const searchQuery = searchInput.value.toLowerCase();
-  
-    tableRows.forEach(row => {
-      const name = row.querySelector('td:first-child').textContent.toLowerCase();
-  
-      if (name.includes(searchQuery)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
 
-  });
-  
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('#myTable tbody td');
+
+    searchInput.addEventListener('input', () => {
+      const searchQuery = searchInput.value.toLowerCase();
+
+      tableRows.forEach(row => {
+        const name = row.querySelector('td:first-child').textContent.toLowerCase();
+
+        if (name.includes(searchQuery)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+
+      });
+
     });
   });
-  
+
 
   return (
     <MainContainer
       style={{ padding: "50px 100px 100px 100px", fontFamily: "Sathoshi" }}
     >
-      <h1 style={{ marginBottom: "20px", fontSize: "28px", fontWeight: "bold", letterSpacing: "5px" , marginLeft: "60px"}}>PRODUCTS</h1>
+      <h1 style={{ marginBottom: "20px", fontSize: "28px", fontWeight: "bold", letterSpacing: "5px", marginLeft: "60px" }}>PRODUCTS</h1>
 
       <nav
         class="navbar navbar-expand-sm"
@@ -71,7 +71,7 @@ const ProductList = ({ posts }) => {
         <ul class="navbar-nav" style={{ marginLeft: "30px" }}>
           <li class="nav-item">
             <input
-            id="searchInput"
+              id="searchInput"
               className="form-control"
               type="search"
               placeholder="Search"
@@ -80,25 +80,24 @@ const ProductList = ({ posts }) => {
             />
           </li>
           <li class="nav-item">
-            <button class="btn btn-primary my-5 my-sm-0" type="submit" style={{ width: "100px" }} >
+
+            <button type="submit" className="btn btn-primary" style={{ width: "150px", height: "40px", borderRadius: "8px", background: "#001eb9" }}>
               Search
             </button>
           </li>
           <li class="nav-item" style={{ marginLeft: "400px", marginTop: "-8px" }}>
             <Link className="nav-link" to="/add-item">
-              <button
-                type="button"
-                class="btn btn-primary"
-                style={{ width: "200px" }}
-              >
+
+
+              <button type="submit" className="btn btn-primary" style={{ width: "200px", height: "40px", borderRadius: "8px", background: "#001eb9" }}>
                 New Product
               </button>
             </Link>
 
           </li>
           <li>
-          <Link to="./favorite" >
-            <img src={frame} style={{ width: "90px", marginTop: "-17px" }} />
+            <Link to="./favorite" >
+              <img src={frame} style={{ width: "90px", marginTop: "-17px" }} />
             </Link>
           </li>
         </ul>
@@ -175,9 +174,9 @@ const ProductList = ({ posts }) => {
                     </div>
 
                     <div className="col-sm-2">
-                      
-                        <img src={star} />
-                   
+
+                      <img src={star} />
+
                     </div>
                   </div>
                 </td>
